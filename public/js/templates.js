@@ -56,7 +56,7 @@ var jade = {
   escape: escape 
 };templates.copy_setter = function anonymous(locals) {
 var buf = [];
-buf.push("<h3>What are your words</h3><textarea></textarea>");;return buf.join("");
+buf.push("<h3>What are your words</h3><textarea></textarea><div class=\"character-counter\">0</div>");;return buf.join("");
 };
 templates.display_select = function anonymous(locals) {
 var buf = [];

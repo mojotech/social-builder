@@ -15,6 +15,30 @@
 
         CopySetter.prototype.template = templates.copy_setter;
 
+        CopySetter.prototype.ui = {
+          'counter': '.character-counter',
+          'input': 'textarea'
+        };
+
+        CopySetter.prototype.events = {
+          'input textarea': 'onTextChange'
+        };
+
+        CopySetter.prototype.getInput = function() {
+          return $.trim(this.ui.input.val());
+        };
+
+        CopySetter.prototype.onTextChange = function() {
+          var input;
+          input = this.getInput();
+          this.ui.counter.text(input.length);
+          if (input.length > 120) {
+            return this.ui.input.addClass('over');
+          } else {
+            return this.ui.input.removeClass('over');
+          }
+        };
+
         return CopySetter;
 
       })(Marionette.ItemView);
