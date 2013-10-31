@@ -60,7 +60,7 @@ buf.push("<h3>What are your words</h3><textarea></textarea><div class=\"characte
 };
 templates.display_select = function anonymous(locals) {
 var buf = [];
-buf.push("<h3>Which style my friend?</h3><ul><li class=\"style\"><div class=\"list-style\">list here</div></li><li class=\"style\"><div class=\"popout-style\">popout here</div></li></ul>");;return buf.join("");
+buf.push("<h3>Which style my friend?</h3><ul><li class=\"display-style selected\"><div class=\"list-style\">list here</div></li><li class=\"display-style\"><div class=\"popout-style\">popout here</div></li></ul>");;return buf.join("");
 };
 templates.network_select = function anonymous(locals) {
 var buf = [];

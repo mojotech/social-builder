@@ -10,5 +10,12 @@ define ['jquery', 'underscore', 'backbone', 'marionette', 'router'], ($, _, Back
       { name: 'google' }
     ])
 
+  supportedStyles = new Backbone.Collection([
+    { name: 'list'},
+    { name: 'popout'}
+  ]);
+
   App.reqres.setHandler "supportedNetworks", -> supportedNetworks
+  App.reqres.setHandler "supportedStyles", -> supportedStyles
+
   App
