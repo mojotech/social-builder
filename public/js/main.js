@@ -11,9 +11,6 @@
         deps: ['jquery', 'underscore'],
         exports: 'Backbone'
       },
-      forms: {
-        deps: ['backbone']
-      },
       marionette: {
         deps: ['backbone'],
         exports: 'Marionette'
@@ -27,7 +24,6 @@
       underscore: '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min',
       backbone: '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min',
       marionette: '//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/1.0.4-bundled/backbone.marionette.min',
-      forms: '//cdnjs.cloudflare.com/ajax/libs/backbone-forms/0.12.0/backbone-forms.min',
       app: 'application',
       router: 'router',
       templates: 'templates',
