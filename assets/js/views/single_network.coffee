@@ -3,7 +3,8 @@ define ['jquery', 'underscore', 'backbone', 'marionette', 'app', 'templates'], (
     class Views.SingleNetwork extends Marionette.ItemView
       tagName: 'li'
       template: templates.single_network
-      className: 'network'
+      className: ->
+        "network #{@model.get('name')}"
 
       events:
         'click': 'toggleActive'

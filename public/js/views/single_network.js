@@ -17,7 +17,9 @@
 
         SingleNetwork.prototype.template = templates.single_network;
 
-        SingleNetwork.prototype.className = 'network';
+        SingleNetwork.prototype.className = function() {
+          return "network " + (this.model.get('name'));
+        };
 
         SingleNetwork.prototype.events = {
           'click': 'toggleActive'
