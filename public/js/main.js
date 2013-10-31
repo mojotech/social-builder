@@ -31,13 +31,16 @@
       app: 'application',
       router: 'router',
       templates: 'templates',
+      social_embed: 'models/social_embed',
       network_select: 'views/network_select',
       display_select: 'views/display_select',
-      copy_setter: 'views/copy_setter'
+      copy_setter: 'views/copy_setter',
+      network_selector: 'views/network_selector',
+      single_network: 'views/single_network'
     }
   });
 
-  require(['app', 'network_select', 'display_select', 'copy_setter'], function(App) {
+  require(['app', 'network_select', 'display_select', 'copy_setter', 'network_selector', 'social_embed', 'single_network'], function(App) {
     var Controller, _ref;
     Controller = (function(_super) {
       __extends(Controller, _super);
@@ -48,14 +51,22 @@
       }
 
       Controller.prototype.root = function() {
+        var socialEmbed;
+        socialEmbed = new App.Models.SocialEmbed;
         App.addRegions({
           'networkSelect': '.network-select',
           'displaySelect': '.display-select',
           'copySetter': '.copy-setter'
         });
-        App.networkSelect.show(new App.Views.NetworkSelect);
-        App.displaySelect.show(new App.Views.DisplaySelect);
-        return App.copySetter.show(new App.Views.CopySetter);
+        App.networkSelect.show(new App.Views.NetworkSelector({
+          model: socialEmbed
+        }));
+        App.displaySelect.show(new App.Views.DisplaySelect({
+          model: socialEmbed
+        }));
+        return App.copySetter.show(new App.Views.CopySetter({
+          model: socialEmbed
+        }));
       };
 
       return Controller;

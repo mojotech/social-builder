@@ -16,21 +16,26 @@ require.config
     app: 'application'
     router: 'router'
     templates: 'templates'
+    social_embed: 'models/social_embed'
     network_select: 'views/network_select'
     display_select: 'views/display_select'
     copy_setter: 'views/copy_setter'
+    network_selector: 'views/network_selector'
+    single_network: 'views/single_network'
 
-require ['app', 'network_select', 'display_select', 'copy_setter'], (App) ->
+require ['app', 'network_select', 'display_select', 'copy_setter', 'network_selector', 'social_embed', 'single_network'], (App) ->
   class Controller extends Marionette.Controller
     root: ->
+      socialEmbed = new App.Models.SocialEmbed
+
       App.addRegions
         'networkSelect': '.network-select'
         'displaySelect': '.display-select'
         'copySetter': '.copy-setter'
 
-      App.networkSelect.show new App.Views.NetworkSelect
-      App.displaySelect.show new App.Views.DisplaySelect
-      App.copySetter.show new App.Views.CopySetter
+      App.networkSelect.show new App.Views.NetworkSelector model: socialEmbed
+      App.displaySelect.show new App.Views.DisplaySelect model: socialEmbed
+      App.copySetter.show new App.Views.CopySetter model: socialEmbed
 
   App.on 'initialize:after', ->
     App.Router = new App.Router(controller: new Controller)

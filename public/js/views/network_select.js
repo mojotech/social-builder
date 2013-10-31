@@ -13,19 +13,23 @@
           return _ref;
         }
 
-        NetworkSelect.prototype.template = templates.network_select;
+        NetworkSelect.prototype.tagName = 'ul';
 
-        NetworkSelect.prototype.events = {
-          'click li': 'setSelectedNetwork'
+        NetworkSelect.prototype.getItemView = function() {
+          return Views.SingleNetwork;
         };
 
-        NetworkSelect.prototype.setSelectedNetwork = function(e) {
-          return $(e.currentTarget).toggleClass('active');
+        NetworkSelect.prototype.initialize = function() {
+          return this.on("itemview:networkToggled", this.setNetworkState);
+        };
+
+        NetworkSelect.prototype.setNetworkState = function(network) {
+          return this.model.toggleNetwork(network.model.get('name'));
         };
 
         return NetworkSelect;
 
-      })(Marionette.ItemView);
+      })(Marionette.CollectionView);
     });
   });
 

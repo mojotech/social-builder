@@ -3,4 +3,12 @@ define ['jquery', 'underscore', 'backbone', 'marionette', 'router'], ($, _, Back
 
   App.Router = Router
 
-  return App
+  supportedNetworks = new Backbone.Collection([
+      { name: 'facebook'},
+      { name: 'twitter' },
+      { name: 'linkedin'},
+      { name: 'google' }
+    ])
+
+  App.reqres.setHandler "supportedNetworks", -> supportedNetworks
+  App

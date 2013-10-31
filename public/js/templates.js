@@ -64,6 +64,10 @@ buf.push("<h3>Which style my friend?</h3><ul><li class=\"style\"><div class=\"li
 };
 templates.network_select = function anonymous(locals) {
 var buf = [];
-buf.push("<h3>I want the following services</h3><ul><li class=\"facebook\">facebook</li><li class=\"twitter\">twitter</li><li class=\"google\">google</li><li class=\"linkedin\">linked in</li></ul>");;return buf.join("");
+buf.push("<h3>I want the following services</h3><div class=\"selectables\"></div>");;return buf.join("");
+};
+templates.single_network = function anonymous(locals) {
+var buf = [];
+var locals_ = (locals || {}),name = locals_.name;buf.push("<h3>" + (jade.escape(null == (jade.interp = name) ? "" : jade.interp)) + "</h3>");;return buf.join("");
 };
 })();
