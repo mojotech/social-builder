@@ -1,0 +1,15 @@
+App.module "Controllers", (Controllers, App, Backbone, Marionette, $, _) ->
+  class Controllers.Main extends Marionette.Controller
+    root: ->
+      socialEmbed = new App.Models.SocialEmbed
+
+      App.addRegions
+        'networkSelect': '.network-select'
+        'displaySelect': '.display-select'
+        'copySetter': '.copy-setter'
+
+      console.log App.networkSelect
+      App.networkSelect.show new App.Views.NetworkSelector model: socialEmbed
+      App.displaySelect.show new App.Views.DisplaySelect model: socialEmbed
+      App.copySetter.show new App.Views.CopySetter model: socialEmbed
+

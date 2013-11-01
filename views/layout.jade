@@ -7,7 +7,37 @@ html
     meta(name='author', content= "author of the site")
     title= title
     link(rel='stylesheet', href='css/main.css')
+    //- dependencies
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/1.0.4-bundled/backbone.marionette.min.js')
+
+    //- templates
+    script(src='js/templates.js')
+
+    //- application
+    script(src='js/application.js')
+
+    //- models
+    script(src='js/models/social_embed.js')
+    script(src='js/models/social_network.js')
+
+    //- collections
+    script(src='js/collections/social_networks.js')
+
+    //- views
+    script(src='js/views/network_select.js')
+    script(src='js/views/display_select.js')
+    script(src='js/views/copy_setter.js')
+    script(src='js/views/network_selector.js')
+    script(src='js/views/single_network.js')
+
+    //- controller
+    script(src='js/controller.js')
+
+    //- main
+    script(src='js/main.js')
+
   body
     block content
-
-  script(data-main="js/main", src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.5/require.min.js")
