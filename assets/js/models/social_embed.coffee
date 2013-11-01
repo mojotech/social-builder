@@ -4,6 +4,7 @@ App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
       selectedNetworks: []
       style: 'list'
       message: ''
+      link: ''
 
     toggleNetwork: (network) ->
       if !~@get('selectedNetworks').indexOf(network)
