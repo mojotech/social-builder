@@ -13,7 +13,7 @@ App.on 'initialize:after', ->
       },
       {
         name: 'linkedin'
-        shareUrl: (url, text) -> "http://www.linkedin.com/shareArticle?mini=true&url=#{url}&summary={text}"
+        shareUrl: (url, text) -> "http://www.linkedin.com/shareArticle?mini=true&url=#{url}&summary=#{text}"
       },
       {
         name: 'google'
