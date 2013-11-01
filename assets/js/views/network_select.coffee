@@ -7,4 +7,4 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       @on "itemview:networkToggled", @setNetworkState
 
     setNetworkState: (network) ->
-      @model.toggleNetwork(network.model.get('name'))
+      @model.toggleNetwork network.model

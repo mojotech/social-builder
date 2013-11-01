@@ -8,13 +8,11 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
     events:
       'input textarea': 'onTextChange'
-      'blur input': 'onUrlChange'
+      'input input': 'onUrlChange'
 
-    getInput: ->
-      $.trim(@ui.input.val())
+    getInput: -> $.trim(@ui.input.val())
 
-    onUrlChange: ->
-      @model.set 'url', $.trim(@ui.url.val())
+    onUrlChange: -> @model.set 'link', $.trim(@ui.url.val())
 
     onTextChange: ->
       input = @getInput()
