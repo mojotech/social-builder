@@ -2,7 +2,13 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.SingleNetwork extends Marionette.ItemView
     tagName: 'li'
     template: templates.single_network
-    className: -> "network-item #{@model.get('name')}"
+    className: ->
+      base = "network-item #{@model.get('name')}"
+
+      if App.request('socialEmbed').networkSelected(@model)
+        base += " active"
+
+      base
 
     events:
       'click': 'toggleActive'

@@ -1,16 +1,21 @@
 App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
   class Models.SocialEmbed extends Backbone.Model
-    defaults:
-      selectedNetworks: []
-      style: 'list'
-      message: ''
-      link: ''
+    defaults: ->
+      {
+        selectedNetworks: App.request('supportedNetworks').where(default: true)
+
+        style: 'list'
+        message: ''
+      }
+
+    networkSelected: (network) ->
+      !!~@get('selectedNetworks').indexOf(network)
 
     toggleNetwork: (network) ->
-      if !~@get('selectedNetworks').indexOf(network)
-        @addNetwork network
-      else
+      if @networkSelected(network)
         @removeNetwork network
+      else
+        @addNetwork network
 
     addNetwork: (network) ->
       @get('selectedNetworks').push(network)
@@ -25,4 +30,3 @@ App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
       link = @get('link')
       _.map(@get('selectedNetworks'), (n) ->
         n.get('shareUrl')(link, message)).join("\n")
-

@@ -3,6 +3,8 @@ App.module "Controllers", (Controllers, App, Backbone, Marionette, $, _) ->
     root: ->
       socialEmbed = new App.Models.SocialEmbed
 
+      App.reqres.setHandler "socialEmbed", -> socialEmbed
+
       App.addRegions
         'networkSelect': '.network-select'
         'displaySelect': '.display-select'

@@ -7,11 +7,13 @@ App.on 'initialize:after', ->
         name: 'facebook'
         imagePath: '/img/logos/facebook@2x.png'
         shareUrl: (url) -> "https://www.facebook.com/sharer/sharer.php?u=#{url}"
+        default: true
       },
       {
         name: 'twitter'
         imagePath: '/img/logos/twitter@2x.png'
         shareUrl: (url, text) -> "http://twitter.com/intent/tweet?text=#{text}&url=#{url}"
+        default: true
       },
       {
         name: 'linkedin'
