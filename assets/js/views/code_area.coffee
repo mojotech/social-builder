@@ -7,7 +7,11 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       @updateEmbedCode()
 
     updateEmbedCode: ->
-      @$el.text @model.getNetworkLinks()
+      @$el.text(
+        (new App.Views.InlineTemplate(
+          collection: new Backbone.Collection @model.get('selectedNetworks')
+        )).render().$el.html()
+      )
 
     modelEvents: ->
-      "change": @updateEmbedCode
+      "change:selectedNetworks change:link change:message": @updateEmbedCode

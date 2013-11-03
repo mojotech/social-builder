@@ -3,8 +3,8 @@ App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
     defaults: ->
       {
         selectedNetworks: App.request('supportedNetworks').where(default: true)
-
         style: 'list'
+        link: ''
         message: ''
       }
 
@@ -24,9 +24,3 @@ App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
     removeNetwork: (network) ->
       @set 'selectedNetworks',
         _.filter(@get('selectedNetworks'), (item) -> item != network)
-
-    getNetworkLinks: ->
-      message = @get('message')
-      link = @get('link')
-      _.map(@get('selectedNetworks'), (n) ->
-        n.get('shareUrl')(link, message)).join("\n")
