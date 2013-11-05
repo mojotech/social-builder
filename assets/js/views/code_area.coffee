@@ -9,7 +9,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     updateEmbedCode: ->
       @$el.text(
         (new App.Views.InlineTemplate(
-          collection: new Backbone.Collection @model.get('selectedNetworks')
+          collection: @model.selectedNetworks()
         )).render().$el.html()
       )
 

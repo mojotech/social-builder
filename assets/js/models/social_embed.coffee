@@ -2,25 +2,21 @@ App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
   class Models.SocialEmbed extends Backbone.Model
     defaults: ->
       {
-        selectedNetworks: App.request('supportedNetworks').where(default: true)
+        selectedNetworks: App.request('supportedNetworks')
         style: 'list'
         link: ''
         message: ''
       }
 
     networkSelected: (network) ->
-      !!~@get('selectedNetworks').indexOf(network)
+      network = @get('selectedNetworks').find (n) -> n.get('name') is network.get('name')
+      network.get('selected')
 
     toggleNetwork: (network) ->
-      if @networkSelected(network)
-        @removeNetwork network
-      else
-        @addNetwork network
+      network = @get('selectedNetworks').find (n) -> n.get('name') is network.get('name')
 
-    addNetwork: (network) ->
-      @get('selectedNetworks').push(network)
+      network.set 'selected', !network.get('selected')
       @trigger 'change change:selectedNetworks'
 
-    removeNetwork: (network) ->
-      @set 'selectedNetworks',
-        _.filter(@get('selectedNetworks'), (item) -> item != network)
+    selectedNetworks: ->
+      new App.Collections.SocialNetworks(@get('selectedNetworks').where({selected: true}))

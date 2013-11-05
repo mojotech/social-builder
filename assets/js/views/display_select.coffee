@@ -6,9 +6,9 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
     onShow: ->
       @inline.show new App.Views.InlineTemplate
-        collection: new Backbone.Collection @model.get('selectedNetworks')
+        collection: @model.selectedNetworks()
 
     modelEvents:
       'change': ->
         @inline.show new App.Views.InlineTemplate
-          collection: new Backbone.Collection @model.get('selectedNetworks')
+          collection: @model.selectedNetworks()
