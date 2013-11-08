@@ -2,14 +2,38 @@
 @import '_variables'
 @import '_type'
 @import '_networks'
+@import '_select_networks'
 @import '_style_select'
 
 reset()
 base()
 
+html, body
+  height: 100%;
+
 body
   margin: 0;
   background-color: #eceff5
+
+.section
+  float: left;
+  height: 100%;
+
+.half
+  width: 50%;
+
+.code-embed
+  background-color: #1b1f28;
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: none;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  text-shadow: none;
+}
 ul
   margin: 0;
   padding: 0;
@@ -20,7 +44,7 @@ ul
 .top-band
   top: 0
   position: absolute
-  width: 100%
+  width: 50%
   margin: 0
   padding: 0
 
@@ -31,83 +55,29 @@ ul
   width: 25%
   list-style-type: none
 
-.center-generator
+.center
   margin: 80px auto 0 auto
-  width: 420px
+  width: 370px
 
 .step-section
-  margin: 20px 0 90px 0
-
-.network-item
-  position: relative
-  display: inline-block
-  list-style-type: none
-  border-radius: border-radius-lg
-  margin-right: 20px
-  line-height: 0
-  &:last-child
-    margin-right: 0
-  &:hover
-    cursor: pointer
-  &.active
-    animation-name: shake; 
-    animation-duration: 150ms; 
-    animation-iteration-count: 2; 
-    animation-timing-function: linear;
-  img
-    width: 90px
-    height: auto
-
-
-.selected-network
-  z-index: 10
-  width: 34px
-  height: 34px
-  position: absolute
-  right: -15px
-  top: -10px
-  background-image: url('/img/selected@2x.png')
-  background-size: 34px
-  transition: all 300ms ease-in-quart
-  transform: scale3d(0,0,0)
-
-.active .selected-network
-  transform: scale3d(1,1,1)
+  margin: 10px 0 30px 0
 
 input, textarea
   color: slate-grey
   padding: 0 10px;
   font-size: 16px;
   border-radius: border-radius-lg
-  border: border-size solid slate-grey
+  border: border-size solid #a4a7b0
   outline: none
   font-size 14px
   width: 100%
   border-box: box-sizing
 
 input
-  height: 60px
+  height: 46px
 
 textarea
   font-size: 18px
   line-height: 24px
   padding: 10px 20px
-  height: 150px
-
-@keyframes shake{ 
-    0% { transform: translate(3px, 0); }
-    50% { transform: translate(-3px, 0); }
-    100% { transform: translate(0, 0); }
-}
- 
-@-moz-keyframes shake{ 
-    0% { -moz-transform: translate(3px, 0); }
-    50% { -moz-transform: translate(-3px, 0); }
-    100% { -moz-transform: translate(0, 0); }
-}
- 
-@-webkit-keyframes shake {
-    0% { -webkit-transform: translate(3px, 0); }
-    50% { -webkit-transform: translate(-3px, 0); }
-    100% { -webkit-transform: translate(0, 0); }
-}
+  height: 100px

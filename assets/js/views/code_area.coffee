@@ -11,7 +11,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
         (new App.Views.InlineTemplate(
           collection: @model.selectedNetworks()
         )).render().$el.html()
-      )
+      ).addClass('language-markup')
 
     modelEvents: ->
       "change:selectedNetworks change:link change:message": @updateEmbedCode
