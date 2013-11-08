@@ -2,13 +2,14 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.DisplaySelect extends Marionette.Layout
     template: templates.display_select
     regions:
-      'inline': '.inline'
+      'list': '.list'
+
+    showTemplates: ->
+      @list.show new App.Views.Templates
+        collection: App.request('supportedStyles')
 
     onShow: ->
-      @inline.show new App.Views.InlineTemplate
-        collection: @model.selectedNetworks()
+      @showTemplates()
 
     modelEvents:
-      'change': ->
-        @inline.show new App.Views.InlineTemplate
-          collection: @model.selectedNetworks()
+      'change': -> @showTemplates()
