@@ -1,7 +1,7 @@
 App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.SingleInlineShare extends Marionette.ItemView
     tagName: 'a'
-    className: -> "share-block-sm #{@model.get('name')}"
+    className: -> "mt-share-circle-sm mt-share-item #{@model.get('name')}"
     template: templates.single_inline_share
 
     setUrl: ->
