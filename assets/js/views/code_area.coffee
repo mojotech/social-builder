@@ -1,7 +1,7 @@
 App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.CodeArea extends Marionette.ItemView
     template: _.template("")
-    tagName: 'code'
+    tagName: 'pre'
     className: 'prettyprint lang-html'
 
     onRender: ->
@@ -13,7 +13,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
           collection: @model.selectedNetworks()
         ).render().$el.html()
 
-      @$el.text(code)
+      @$el.text(html_beautify(code))
       prettyPrint()
 
     onShow: ->
