@@ -4,12 +4,14 @@
 @import '_networks'
 @import '_select_networks'
 @import '_style_select'
+@import '_code_areas'
 
 reset()
 base()
 
 html, body
-  height: 100%;
+  height:     100%
+  min-width:  770px
 
 body
   margin: 0;
@@ -21,9 +23,6 @@ body
 
 .half
   width: 50%;
-
-.code-embed
-  background-color: #1b1f28;
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
