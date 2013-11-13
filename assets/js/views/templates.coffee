@@ -5,9 +5,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       @on 'itemview:styleClicked', @styleClicked
 
     styleClicked: (obj) ->
-      @collection.each (o) =>
-        o.set 'selected', false
-
+      @collection.findWhere({selected: true}).set('selected', false)
       obj.model.set 'selected', true
 
     getItemView: (m) =>
