@@ -2,7 +2,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.CodeArea extends Marionette.ItemView
     template: _.template("")
     tagName: 'pre'
-    className: 'prettyprint lang-html'
+    className: 'prettyprint linenums lang-html'
 
     initialize: ->
       @listenTo App.request('supportedStyles'), 'change:selected', (o) ->
