@@ -1,7 +1,7 @@
 App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.StyleBase extends Marionette.Layout
     tagName: 'li'
-    className: -> "#{@classBase} display-style inline"
+    className: "display-style inline"
 
     triggers:
       "click": 'styleClicked'
@@ -14,6 +14,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     onRender: =>
       @displayType.show new App.Views.InlineTemplate
         collection: App.request("socialEmbed").selectedNetworks()
+        styleType: @classBase
 
       if @model.get('selected')
         @$el.addClass 'selected'
