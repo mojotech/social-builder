@@ -1,6 +1,6 @@
 App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.HtmlCodeArea extends Views.CodeArea
-    className: 'prettyprint linenums lang-html'
+    className: 'line-numbers language-markup'
 
     updateEmbedCode: =>
       code = new App.Views.InlineTemplate(
@@ -9,7 +9,6 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
         ).render().$el.html()
 
       @$el.text(html_beautify(code))
-      prettyPrint()
 
     modelEvents: ->
       "change:selectedNetworks change:link change:message": @render
