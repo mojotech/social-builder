@@ -8,6 +8,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
           styleType: App.request('supportedStyles').findWhere({selected: true}).get('name')
         ).render().$el.html()
 
+      code = "<!-- Oh no! Better select some networks! -->" unless code.length > 0
       @$el.text(html_beautify(code))
 
     modelEvents: ->
