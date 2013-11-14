@@ -1,4 +1,4 @@
-window.App = new Backbone.Marionette.Application()
+window.App = new Backbone.Marionette.Application
 
 
 App.on 'initialize:after', ->
