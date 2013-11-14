@@ -9,8 +9,8 @@ App.module "Controllers", (Controllers, App, Backbone, Marionette, $, _) ->
         'networkSelect': '.network-select'
         'displaySelect': '.display-select'
         'copySetter': '.copy-setter'
-        'htmlCodeArea': '.html-code'
-        'cssCodeArea': '.css-code'
+        'htmlCodeArea': '.html-code pre'
+        'cssCodeArea': '.css-code pre'
 
       App.networkSelect.show new App.Views.NetworkSelector model: socialEmbed
       App.displaySelect.show new App.Views.DisplaySelect model: socialEmbed

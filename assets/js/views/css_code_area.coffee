@@ -1,6 +1,6 @@
 App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.CSSCodeArea extends Views.CodeArea
-    className: 'prettyprint linenums lang-css'
+    className: 'line-numbers language-css'
 
     updateEmbedCode: =>
       selectedStyleName = App.request('supportedStyles').findWhere(selected: true).get('name')
