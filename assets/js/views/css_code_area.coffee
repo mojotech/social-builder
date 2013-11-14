@@ -1,6 +1,6 @@
 App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.CSSCodeArea extends Views.CodeArea
-    className: 'line-numbers language-css'
+    className: 'language-css'
 
     serializeData: ->
       _.extend
