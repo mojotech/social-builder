@@ -1,8 +1,18 @@
 code[class*="language-"], pre[class*="language-"]
   color: twitter-blue
   white-space: pre-wrap
+
 .token
   &.property
     color: google-red
   &.selector
     color: lighten(dark-blue, 40%)
+
+.token.property, .token.tag, .token.boolean, .token.number, .token.constant, .token.symbol
+  color: google-red
+
+.token.punctuation
+  color: lighten(dark-blue, 30%)
+
+.token.selector, .token.attr-name, .token.string, .token.builtin
+  color: lighten(dark-blue, 60%)
