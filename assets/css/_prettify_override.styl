@@ -1,12 +1,5 @@
 code[class*="language-"], pre[class*="language-"]
   color: twitter-blue
-  white-space: pre-wrap
-
-.token
-  &.property
-    color: google-red
-  &.selector
-    color: lighten(dark-blue, 40%)
 
 .token.property, .token.tag, .token.boolean, .token.number, .token.constant, .token.symbol
   color: google-red
@@ -16,3 +9,9 @@ code[class*="language-"], pre[class*="language-"]
 
 .token.selector, .token.attr-name, .token.string, .token.builtin
   color: lighten(dark-blue, 60%)
+
+.line-numbers .line-numbers-rows
+  border-right: 1px solid lighten(dark-blue, 20%)
+
+.line-numbers-rows > span:before
+  color: lighten(dark-blue, 20%)

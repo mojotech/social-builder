@@ -1,6 +1,6 @@
 App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.HtmlCodeArea extends Views.CodeArea
-    className: 'line-numbers language-markup'
+    className: 'language-markup'
 
     serializeData: ->
       _.extend
