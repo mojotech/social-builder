@@ -11,3 +11,4 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
     onRender: =>
       Prism.highlightAll()
+      new ZeroClipboard  @$('.copy'), moviePath: '/zero_clipboard.swf'
