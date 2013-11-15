@@ -1,0 +1,26 @@
+.active
+  animation-name: shake;
+  animation-duration: 150ms;
+  animation-iteration-count: 2;
+  animation-timing-function: linear;
+
+.check
+  z-index: 10
+  width: 34px
+  height: 34px
+  position: absolute
+  right: -15px
+  top: -10px
+  background-image: url('/img/selected@2x.png')
+  background-size: 34px
+  transition: all 300ms ease-in-quart
+  transform: scale3d(0,0,0)
+
+.active .check
+  transform: scale3d(1,1,1)
+
+@keyframes shake {
+    0% { transform: translate(3px, 0); }
+    50% { transform: translate(-3px, 0); }
+    100% { transform: translate(0, 0); }
+}

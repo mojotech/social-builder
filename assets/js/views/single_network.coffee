@@ -3,7 +3,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     tagName: 'li'
     template: templates.single_network
     className: ->
-      base = "network-item #{@model.get('name')}"
+      base = "toggle network-item #{@model.get('name')}"
 
       if App.request('socialEmbed').networkSelected(@model)
         base += " active"
