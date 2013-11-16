@@ -1,5 +1,6 @@
-h2.faded-header= type
-button.copy(data-clipboard-text=code) copy
+.embed-fixed-header
+    h2.faded-header.left= type
+    button.copy.right(data-clipboard-text=code) copy
+
 pre.line-numbers
   code=beutify(code)
-
