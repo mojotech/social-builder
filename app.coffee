@@ -4,6 +4,6 @@ ignore_files: ['_*', 'readme*', '.gitignore', '.DS_Store', 'layout.jade']
 ignore_folders: ['.git']
 
 locals:
-  title: 'Social Builder'
+  title: 'Social embed generater - choose, style, and embed!'
 
 templates: 'assets/js/templates'
