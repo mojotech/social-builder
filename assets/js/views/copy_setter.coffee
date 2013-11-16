@@ -5,7 +5,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       'counter' :'.character-counter'
       'input': 'textarea'
       'url': 'input'
-
+      'warning' : '.twitter-warning'
     events:
       'input textarea': 'onTextChange'
       'input input': 'onUrlChange'
@@ -20,7 +20,8 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       @ui.counter.text input.length
       @model.set 'message', input
 
-      if input.length > 120
+      if input.length > 140
         @ui.input.addClass 'over'
+        @ui.warning.addClass 'max-hit'
       else
         @ui.input.removeClass 'over'
