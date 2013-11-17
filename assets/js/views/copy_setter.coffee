@@ -25,3 +25,4 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
         @ui.warning.addClass 'max-hit'
       else
         @ui.input.removeClass 'over'
+        @ui.warning.removeClass 'max-hit'
