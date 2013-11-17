@@ -1,4 +1,4 @@
-.code-embed
+.section.code-embed
   top:        0
   left:       50%
   height:     100%
@@ -20,24 +20,27 @@
   border-top: solid 3px rgba(0, 0, 0, 0.72)
 
 .faded-header
+  float: left
   padding: 0 0 0 30px
   font-size: 24px
+  margin-bottom: 0
   color: lighten(dark-blue, 14%)
 
 .embed-fixed-header
-  width: 100%
+  width:    100%
+  overflow: auto
 
-.copy
-  top: 16px
-  left: 30%
-  position: absolute
+.copy-button
+  top: 20px
+  left: 50px
+  float: left
+  position: relative
   font-size: 14px
   text-transform: uppercase
   border-radius: 8px
   background-color: lighten(dark-blue, 10%)
   color: dark-blue
   padding: 6px 10px
-  display: block
   &:hover
     cursor: pointer
     background-color: lighten(dark-blue, 14%)
