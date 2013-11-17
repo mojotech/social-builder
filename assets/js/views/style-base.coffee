@@ -1,12 +1,12 @@
 App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
   class Views.StyleBase extends Marionette.Layout
     tagName: 'li'
-    className: "display-style inline"
+    className: "toggle display-style inline"
 
     triggers:
       "click": 'styleClicked'
 
-    template: _.template("<ul class='display-type'></ul>")
+    template: templates.embed_style
 
     regions:
       displayType: '.display-type'
@@ -17,9 +17,9 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
         styleType: @classBase
 
       if @model.get('selected')
-        @$el.addClass 'selected'
+        @$el.addClass 'active'
       else
-        @$el.removeClass 'selected'
+        @$el.removeClass 'active'
 
     modelEvents:
       'change:selected': 'render'
