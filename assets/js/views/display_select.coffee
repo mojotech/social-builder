@@ -8,8 +8,8 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       @list.show new App.Views.Templates
         collection: App.request('supportedStyles')
 
-    onShow: ->
+    onRender: ->
       @showTemplates()
 
-    modelEvents:
-      'change': -> @showTemplates()
+    modelEvents: ->
+      "change:selectedNetworks": "render"
