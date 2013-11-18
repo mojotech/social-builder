@@ -17,7 +17,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       ).render().$el.html()
 
       code = "<!-- Oh no! Better select some networks! -->" unless code.length > 0
-      code
+      "<div> #{code} </div>"
 
     modelEvents: ->
       "change:selectedNetworks change:link change:message": @render
