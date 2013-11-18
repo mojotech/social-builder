@@ -4,6 +4,9 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
     serializeData: ->
       code: @getCode()
+      beutifyOptions:
+        indent_size : 2
+        wrap_line_length: 10
 
     initialize: ->
       @listenTo App.request('supportedStyles'), 'change:selected', (o) ->
