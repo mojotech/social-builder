@@ -13,4 +13,5 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     getCode: ->
       selectedStyleName = App.request('supportedStyles').findWhere(selected: true).get('name')
       node = _.find document.styleSheets, (v) -> v.ownerNode.id is selectedStyleName
-      _.map(node.rules, (v) -> v.cssText).reverse().join('')
+      rules = if node.rules? then node.rules else node.cssRules
+      _.map(rules, (v) -> v.cssText).reverse().join('')
