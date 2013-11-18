@@ -15,5 +15,5 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     onRender: =>
       Prism.highlightAll()
       new ZeroClipboard  @$('.copy-button'),
-        moviePath:       '/zero_clipboard.swf'
+        moviePath:       'zero_clipboard.swf'
         forceHandCursor: true
