@@ -24,7 +24,7 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 
       clip.on "wrongFlash noFlash", =>
         window.noFlash = true
-        @ui.copyButton.hide()
+        $('.copy-button').hide()
         try
           ZeroClipboard.destroy()
         catch e
