@@ -1,6 +1,7 @@
 .embed-fixed-header
   h2.faded-header= type
-  .copy-button(data-clipboard-text=code) copy
+  - if (!noFlash)
+    .copy-button(data-clipboard-text=code) copy
 
 pre.line-numbers
   code=beutify(code, beutifyOptions)
