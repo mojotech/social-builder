@@ -1,39 +1,39 @@
-#= require "vendor/jquery.js"
-#= require "vendor/underscore.js"
-#= require "vendor/backbone.js"
-#= require "vendor/backbone.marionette.js"
+#= require "vendor/_jquery.js"
+#= require "vendor/_underscore.js"
+#= require "vendor/_backbone.js"
+#= require "vendor/_backbone.marionette.js"
 
-#= require "vendor/beutify-css.js"
-#= require "vendor/beutify-html.js"
-#= require "vendor/prism.js"
-#= require "vendor/zero_clipboard.js"
+#= require "vendor/_beutify-css.js"
+#= require "vendor/_beutify-html.js"
+#= require "vendor/_prism.js"
+#= require "vendor/_zero_clipboard.js"
 
-#= require "application.js"
-#= require "networks.js"
+#= require "_application.js"
+#= require "_networks.js"
 
-#= require "models/social_embed.js"
-#= require "models/social_network.js"
+#= require "models/_social_embed.js"
+#= require "models/_social_network.js"
 
-#= require "collections/social_networks.js"
+#= require "collections/_social_networks.js"
 
-#= require "views/style-base.js"
-#= require 'views/style-base.js'
-#= require 'views/network_select.js'
-#= require 'views/display_select.js'
-#= require 'views/copy_setter.js'
-#= require 'views/network_selector.js'
-#= require 'views/single_network.js'
-#= require 'views/code_area.js'
-#= require 'views/html_code_area.js'
-#= require 'views/css_code_area.js'
-#= require 'views/inline_template.js'
-#= require 'views/single_inline_share.js'
-#= require 'views/templates.js'
-#= require 'views/list-square.js'
-#= require 'views/list-bar.js'
-#= require 'views/list-circle.js'
+#= require "views/_style-base.js"
+#= require 'views/_style-base.js'
+#= require 'views/_network_select.js'
+#= require 'views/_display_select.js'
+#= require 'views/_copy_setter.js'
+#= require 'views/_network_selector.js'
+#= require 'views/_single_network.js'
+#= require 'views/_code_area.js'
+#= require 'views/_html_code_area.js'
+#= require 'views/_css_code_area.js'
+#= require 'views/_inline_template.js'
+#= require 'views/_single_inline_share.js'
+#= require 'views/_templates.js'
+#= require 'views/_list-square.js'
+#= require 'views/_list-bar.js'
+#= require 'views/_list-circle.js'
 
-#= require 'controller.js'
+#= require '_controller.js'
 
 $ ->
   App.start()
