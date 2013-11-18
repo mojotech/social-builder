@@ -8,11 +8,14 @@ a.mt-share-inline-bar-sm
   border-radius: 0
   margin-right: 0
   text-align: center
+  position: relative
+  transition: all 100ms ease-in
+  transform: scale3d(1, 1, 1)
+
   &:hover
-    img
-      transform: translate3d(0, 0, 0)
+    z-index: 50
+    transform: scale3d(1.075, 1.075, 1.075)
+
   img
     width: small-square
     height: auto
-    transition: all 200ms ease-in
-    transform: translate3d(0, 14px, 0)
