@@ -1,5 +1,13 @@
 Social Builder
----------------
+====
+##[Use it Live](http://mojotech.com/social-builder)
+
+
+### Why should you use this?
+* For those times when you want some social buttons, that look nice, but don't want to scape the internet for how.
+* For those times when you want some markup that you can hack and not iframes.
+* For those times you want to be awesome, because you are!
+
 
 ### Dev
 * ``` npm install roots@2.1.0-beta4 -g ```
