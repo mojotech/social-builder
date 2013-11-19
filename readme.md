@@ -8,3 +8,10 @@ Social Builder
 
 ### Deployment
 * ```roots deploy --gh-pages```
+
+
+### Adding a new display type
+* create a new file like _list-bar.coffee
+* add said file to main.coffee
+* add new style to supported styles in application.coffee
+* add a new stylesheet in layout.jade with the contained styles
