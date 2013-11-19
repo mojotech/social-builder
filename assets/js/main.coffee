@@ -30,6 +30,7 @@
 #= require 'views/_single_inline_share.js'
 #= require 'views/_templates.js'
 #= require 'views/_list-square.js'
+#= require 'views/_list-square-bw.js'
 #= require 'views/_list-bar.js'
 #= require 'views/_list-circle.js'
 
