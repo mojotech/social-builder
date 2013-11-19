@@ -1,0 +1,28 @@
+@import '../_variables'
+
+a.mt-share-inline-square-bw-sm
+  display: inline-block
+  width: small-square
+  height: small-square
+  border-radius: 2px
+  margin-right: network-item-spacing
+  text-align: center
+  background-color: dark-grey
+  transition: background-color 300ms ease-in
+
+  .mt-facebook
+   &:hover
+     background-color: facebook-blue
+  .mt-twitter
+   &:hover
+     background-color: twitter-blue
+  .mt-linkedin
+   &:hover
+     background-color: linkedin-blue
+  .mt-google
+   &:hover
+      background-color: google-red
+
+  img
+    width: small-square
+    height: auto

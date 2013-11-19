@@ -25,7 +25,9 @@
   right:          10px
   position:       absolute
   font-size:      15px
-  font-weight:    bold
   a
-    color: rgba(255, 255, 255, 0.48)
+    color: lighten(dark-blue, 25%)
     text-decoration: none
+    transition: color 200ms ease-in
+    &:hover
+      color: green
