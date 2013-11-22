@@ -11,9 +11,11 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
       beutify: html_beautify
 
     getCode: =>
+      classBase = (new Views[App.request('supportedStyles').findWhere({selected: true}).get('name')]).classBase
+
       code = new App.Views.InlineTemplate(
         collection: @model.selectedNetworks()
-        styleType: App.request('supportedStyles').findWhere({selected: true}).get('name')
+        styleType: classBase
       ).render().$el.html()
 
       code = "<!-- Oh no! Better select some networks! -->" unless code.length > 0
