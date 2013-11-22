@@ -1,14 +1,31 @@
 App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
-  class Views.CopySetter extends Marionette.ItemView
+  class Views.CopySetter extends Marionette.Layout
     template: templates.copy_setter
+
+    regions:
+      'mediaUrl': '.media-url'
+
     ui:
       'counter' :'.character-counter'
       'input': 'textarea'
       'url': 'input'
       'warning' : '.twitter-warning'
+
     events:
       'input textarea': 'onTextChange'
       'input input': 'onUrlChange'
+
+    modelEvents: ->
+      "change:selectedNetworks": "checkNetworks"
+
+    checkNetworks: ->
+      pinterest = @model.get('selectedNetworks').findWhere
+        name: "mt-pinterest"
+
+      if pinterest.get 'selected'
+        @mediaUrl.show new Views.MediaSetter(model: @model)
+      else
+        @mediaUrl.reset()
 
     getInput: -> $.trim(@ui.input.val())
 

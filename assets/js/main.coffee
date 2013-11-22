@@ -16,6 +16,7 @@
 
 #= require "collections/_social_networks.js"
 
+#= require "views/_media_setter.js"
 #= require "views/_style-base.js"
 #= require 'views/_style-base.js'
 #= require 'views/_network_select.js'

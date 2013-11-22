@@ -21,6 +21,11 @@ App.on 'initialize:after', ->
       name: 'mt-google'
       imagePath: 'http://mojotech-static.s3.amazonaws.com/google@2x.png'
       shareUrl: (url) -> "https://plus.google.com/share?url=#{url}"
+    },
+    {
+      name: 'mt-pinterest'
+      imagePath: 'http://mojotech-static.s3.amazonaws.com/pinterest@2x.png'
+      shareUrl: (url, text, mediaUrl) -> "http://www.pinterest.com/pin/create/button/?url=#{url}&media=#{mediaUrl}&guid=1234&description=#{text}"
     }
   ])
 

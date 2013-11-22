@@ -7,7 +7,9 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     setUrl: ->
       url = encodeURI(App.request('socialEmbed').get('link'))
       text = encodeURI(App.request('socialEmbed').get('message'))
-      @$el.attr 'href', @model.get('shareUrl')(url, text)
+      mediaUrl = encodeURI(App.request('socialEmbed').get('mediaUrl'))
+
+      @$el.attr 'href', @model.get('shareUrl')(url, text, mediaUrl)
 
     onRender: ->
       @setUrl()

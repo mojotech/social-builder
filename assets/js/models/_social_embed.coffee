@@ -6,6 +6,7 @@ App.module "Models", (Models, App, Backbone, Marionette, $, _) ->
         style: 'list'
         link: ''
         message: ''
+        mediaUrl: ''
       }
 
     networkSelected: (network) ->
