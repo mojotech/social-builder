@@ -5,9 +5,9 @@ App.module "Views", (Views, App, Backbone, Marionette, $, _) ->
     template: templates.single_inline_share
 
     setUrl: ->
-      url = encodeURI(App.request('socialEmbed').get('link'))
-      text = encodeURI(App.request('socialEmbed').get('message'))
-      mediaUrl = encodeURI(App.request('socialEmbed').get('mediaUrl'))
+      url = encodeURIComponent(App.request('socialEmbed').get('link'))
+      text = encodeURIComponent(App.request('socialEmbed').get('message'))
+      mediaUrl = encodeURIComponent(App.request('socialEmbed').get('mediaUrl'))
 
       @$el.attr 'href', @model.get('shareUrl')(url, text, mediaUrl)
 
