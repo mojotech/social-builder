@@ -9,13 +9,13 @@ App.on 'initialize:after', ->
     {
       name: 'mt-twitter'
       imagePath: 'http://mojotech-static.s3.amazonaws.com/twitter@2x.png'
-      shareUrl: (url, text) -> "http://twitter.com/intent/tweet?text=#{text}&url=#{url}"
+      shareUrl: (url, text) -> "https://twitter.com/intent/tweet?text=#{text}&url=#{url}"
       selected: true
     },
     {
       name: 'mt-linkedin'
       imagePath: 'http://mojotech-static.s3.amazonaws.com/linkedin@2x.png'
-      shareUrl: (url, text) -> "http://www.linkedin.com/shareArticle?mini=true&url=#{url}&summary=#{text}"
+      shareUrl: (url, text) -> "https://www.linkedin.com/shareArticle?mini=true&url=#{url}&summary=#{text}"
     },
     {
       name: 'mt-google'
@@ -25,7 +25,7 @@ App.on 'initialize:after', ->
     {
       name: 'mt-pinterest'
       imagePath: 'http://mojotech-static.s3.amazonaws.com/pinterest@2x.png'
-      shareUrl: (url, text, mediaUrl) -> "http://www.pinterest.com/pin/create/button/?url=#{url}&media=#{mediaUrl}&guid=1234&description=#{text}"
+      shareUrl: (url, text, mediaUrl) -> "https://www.pinterest.com/pin/create/button/?url=#{url}&media=#{mediaUrl}&guid=1234&description=#{text}"
     }
   ])
 
