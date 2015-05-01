@@ -1,7 +1,7 @@
 Social Builder
 ==============
 
-## [Use it Live](https://mojotech.com/social-builder)
+## [Use it Live](https://mojotech.github.io/social-builder/)
 
 
 ### Why should you use this?
